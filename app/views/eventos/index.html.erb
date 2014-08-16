@@ -8,6 +8,7 @@
       <th>Inicio</th>
       <th>Fim</th>
       <th>Fornecedor</th>
+      <th>Responsável</th>
       <th>Vagas</th>
       <th>Local</th>
       <th>Valor</th>
@@ -23,6 +24,7 @@
         <td><%= evento.inicio %></td>
         <td><%= evento.fim %></td>
         <td><%= evento.fornecedor %></td>
+        <td><%= evento.responsavel.try :email %></td>
         <td><%= evento.vagas %></td>
         <td><%= evento.local %></td>
         <td><%= evento.valor %></td>

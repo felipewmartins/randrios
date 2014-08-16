@@ -39,6 +39,11 @@
   <strong>Valor:</strong>
   <%= @evento.valor %>
 </p>
+
+<p>
+  <strong>Responsável:</strong>
+  <%= @evento.responsavel.try :email %>
+</p>
 <% if responsavel_signed_in? %>
 <%= link_to 'Edit', edit_evento_path(@evento) %> |
 <% end %>

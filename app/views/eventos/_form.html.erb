@@ -32,6 +32,10 @@
     <%= f.text_field :fornecedor %>
   </div>
   <div class="field">
+    <%= f.label :responsavel_id %><br>
+    <%= f.select :responsavel_id,Responsavel.all.map { |r|[r.email,r.id]  }%>
+  </div>
+  <div class="field">
     <%= f.label :vagas %><br>
     <%= f.number_field :vagas %>
   </div>
