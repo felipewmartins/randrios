@@ -1,6 +1,7 @@
 class EventosController < ApplicationController
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_responsavel!,except: [:index, :show]
+  authorize_resource
   # GET /eventos
   # GET /eventos.json
   def index

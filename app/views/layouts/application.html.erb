@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p>
+	<%= current_responsavel.try :email %>
+</p>
 <%= link_to('Sair',destroy_responsavel_session_path, method: :delete) if responsavel_signed_in? %>
 <%= link_to('Logar',new_responsavel_session_path) unless responsavel_signed_in? %>
 <%= yield %>

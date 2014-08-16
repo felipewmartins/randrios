@@ -41,3 +41,5 @@ gem 'spring',        group: :development
 gem 'byebug'
 
 gem 'devise'
+
+gem 'cancancan', '~> 1.9'
