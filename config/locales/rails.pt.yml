@@ -209,3 +209,6 @@ pt:
   activerecord:
     errors:
       <<: *errors
+    attributes:
+      evento:
+        descricao: Descrição 

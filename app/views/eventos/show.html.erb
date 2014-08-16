@@ -39,6 +39,7 @@
   <strong>Valor:</strong>
   <%= @evento.valor %>
 </p>
-
+<% if responsavel_signed_in? %>
 <%= link_to 'Edit', edit_evento_path(@evento) %> |
+<% end %>
 <%= link_to 'Back', eventos_path %>

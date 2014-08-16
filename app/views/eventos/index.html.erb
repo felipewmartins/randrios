@@ -27,8 +27,10 @@
         <td><%= evento.local %></td>
         <td><%= evento.valor %></td>
         <td><%= link_to 'Show', evento %></td>
+        <% if responsavel_signed_in? %>
         <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
         <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
