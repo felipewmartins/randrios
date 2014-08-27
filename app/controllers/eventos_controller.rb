@@ -1,11 +1,10 @@
 class EventosController < ApplicationController
-  before_action :set_evento, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_responsavel!,except: [:index, :show]
-  authorize_resource
+  load_and_authorize_resource
   # GET /eventos
   # GET /eventos.json
   def index
-    @eventos = Evento.all
+    #@eventos = Evento.all
   end
 
   # GET /eventos/1
@@ -15,7 +14,7 @@ class EventosController < ApplicationController
 
   # GET /eventos/new
   def new
-    @evento = Evento.new
+    #@evento = Evento.new
   end
 
   # GET /eventos/1/edit
@@ -25,7 +24,7 @@ class EventosController < ApplicationController
   # POST /eventos
   # POST /eventos.json
   def create
-    @evento = Evento.new(evento_params)
+    #@evento = Evento.new(evento_params)
 
     respond_to do |format|
       if @evento.save
@@ -64,10 +63,7 @@ class EventosController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_evento
-      @evento = Evento.find(params[:id])
-    end
-
+   
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
       params.require(:evento).permit(:nome, :descricao, :inicio, :fim, :fornecedor, :vagas, :local, :valor, :responsavel_id)

@@ -6,13 +6,11 @@ class Ability
     #
     #  responsavel ||= Responsavel.new # guest user (not logged in)
     cannot :manage, :all
-       if responsavel
-         can [:edit, :destroy], Evento, id: responsavel.evento_ids
-         can [:index, :show, :new], Evento
-         can [:create], Evento, responsavel_id: responsavel.id
-       else
-         can [:index, :show], Evento
-       end
+    if responsavel
+        can :manage, Evento, responsavel_id: responsavel.id
+    else
+        can [:index, :show], Evento
+    end
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

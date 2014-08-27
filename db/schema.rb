@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816173625) do
+ActiveRecord::Schema.define(version: 20140827223020) do
 
   create_table "eventos", force: true do |t|
     t.string   "nome"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140816173625) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nome"
   end
 
   add_index "responsaveis", ["email"], name: "index_responsaveis_on_email", unique: true
