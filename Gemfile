@@ -43,3 +43,9 @@ gem 'byebug'
 gem 'devise'
 
 gem 'cancancan', '~> 1.9'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
+gem 'factory_girl_rails'
